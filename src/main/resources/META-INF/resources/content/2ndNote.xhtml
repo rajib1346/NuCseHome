@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="css/styel.css"></link>
+    </h:head>
+
+    <h:body style="background: #3371FF">
+          <h2>2nd Semester Notes</h2>
+                                  
+                  
+            <h:panelGrid columns="2">
+                
+                <h:form >
+                    <h:panelGrid>
+       
+                        <h:dataTable value="#{fastSemesterNote.getLocation()}" var="u" border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
+                              				
+               <f:facet name = "header" >Hand Notes</f:facet>    				
+               
+     
+            
+
+            
+            <h:column>
+               <f:facet name = "header">File Name</f:facet>
+               <h:outputLabel value = "#{u.location}"
+                            
+                   />
+               
+            </h:column>
+            
+          
+                      
+                      <h:column>
+               <f:facet name = "header">Download</f:facet>
+               
+               <h:commandButton value="Download File" action="#{fastSemesterNote.download(u.location)}" style="color: blue"/>     
+            </h:column>
+            
+           
+            </h:dataTable>        
+                      
+                    </h:panelGrid>
+               
+                </h:form>  
+             
+           
+                
+            </h:panelGrid>
+         <div class="footersection template clear">
+	
+	     
+	     <p>&copy;NU CSE Home</p>
+	</div>  
+        
+    </h:body>
+</html>
+
