@@ -32,9 +32,15 @@ import org.primefaces.model.StreamedContent;
 
 public class tabelElement {
   
-    private String location,locationlink;
+    private String location,locationlink,qlocation;
      
+public String getQlocation() {
+        return qlocation;
+    }
 
+    public void setQlocation(String qlocation) {
+        this.qlocation = qlocation;
+    }
      public String getLocationlink() {
         return locationlink;
     }
