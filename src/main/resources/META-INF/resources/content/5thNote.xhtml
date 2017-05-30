@@ -14,15 +14,26 @@
                <h2>5th Semester Note</h2>
                                   
         <h:form>
-                  
+                <h:panelGrid> 
                   <h:dataTable value="#{fifthSemesterNote.getLocation()}" var="u" border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
-    <f:facet name = "header" >Hand Notes</f:facet>    	
+    <f:facet name = "header" >File Name</f:facet>    	
             
             <h:column>
-               <f:facet name = "header">File Name</f:facet>
+              
                <h:outputLabel value = "#{u.location}"
                             
                    />
+               
+            </h:column>
+       </h:dataTable>  
+			
+			
+			            <h:dataTable value="#{fifthSemesterNote.getLink()}" var="v"  border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
+    <f:facet name = "header" >Download</f:facet>    	
+            
+            <h:column>
+                <h:outputLink value="#{v.locationlink}">Download Here</h:outputLink>
+               
                
             </h:column>
             
@@ -30,15 +41,11 @@
             
            
                       
-                      <h:column>
-               <f:facet name = "header">Download</f:facet>
-               
-               <h:commandButton value="Download File" action="#{fifthSemesterNote.download(u.location)}" style="color: blue"/>     
-            </h:column>
+                   
             
            
-            </h:dataTable>        
-                      
+            </h:dataTable>   
+    </h:panelGrid>                   
 
 </h:form>
 	    
