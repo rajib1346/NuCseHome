@@ -47,8 +47,11 @@ String line;
         this.selectedname = selectedname;
     }
 
-   
-    public List<tabelElement> getLocation() throws  FileNotFoundException, IOException {
+    
+    
+    
+    
+     public List<tabelElement> getLocation() throws  FileNotFoundException, IOException {
 
         List<tabelElement> list = new ArrayList<tabelElement>();
        //  BufferedReader br=null;
@@ -60,7 +63,7 @@ String line;
 //
 //        Statement stmt = con.createStatement();
 //        ResultSet rs = stmt.executeQuery("select id,location,fileName,Author,size from " + selectedname + "");
- URL oracle = new URL("https://shawonislam.com/rajib/fifthnote.txt");
+ URL oracle = new URL("http://shawonislam.com/rajib/fifthnote.txt");
     BufferedReader in = new BufferedReader(
     new InputStreamReader(oracle.openStream()));
 
@@ -80,6 +83,11 @@ String line;
 
         return list;
     }
+
+
+
+    
+    
     
     
 
