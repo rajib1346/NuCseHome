@@ -6,58 +6,67 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
-        <link rel="stylesheet" href="css/styel.css"></link>
     </h:head>
-
+      
+      
     <h:body style="background: #3371FF">
-          <h2>2nd Semester Notes</h2>
+          
+               <h2>2nd Semester Note</h2>
                                   
-                  
-            <h:panelGrid columns="2">
-                
-                <h:form >
-                    <h:panelGrid>
-       
-                        <h:dataTable value="#{fastSemesterNote.getLocation()}" var="u" border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
-                              				
-               <f:facet name = "header" >Hand Notes</f:facet>    				
-               
-     
-            
-
+        <h:form>
+		
+		
+                <h:panelGrid columns="2"> 
+			
+			
+			       <h:dataTable value="#{secondSemesterNote.getLocation()}" var="u"  border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
+    <f:facet name = "header" >Hand Notes</f:facet>    	
             
             <h:column>
-               <f:facet name = "header">File Name</f:facet>
+           
                <h:outputLabel value = "#{u.location}"
                             
                    />
                
             </h:column>
             
-          
-                      
-                      <h:column>
-               <f:facet name = "header">Download</f:facet>
-               
-               <h:commandButton value="Download File" action="#{fastSemesterNote.download(u.location)}" style="color: blue"/>     
-            </h:column>
+         
             
            
-            </h:dataTable>        
                       
-                    </h:panelGrid>
-               
-                </h:form>  
-             
+                   
+            
            
-                
-            </h:panelGrid>
-         <div class="footersection template clear">
+            </h:dataTable> 
+                 <h:dataTable value="#{secondSemesterNote.getLink()}" var="v"  border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
+                   <f:facet name = "header" >Download Here</f:facet>    	
+            
+            <h:column>
+                <h:outputLink value="#{v.locationlink}">Download Here</h:outputLink>
+               
+               
+            </h:column>
+            
+         
+            
+           
+                      
+                   
+            
+           
+            </h:dataTable> 
+			
+			
+	  
+    </h:panelGrid>                   
+
+</h:form>
+	    
+	    <div class="footersection template clear">
 	
 	     
-	     <p>&copy;NU CSE Home</p>
+	     <p>&copy; NU CSE Home</p>
 	</div>  
-        
+	    
     </h:body>
 </html>
-
