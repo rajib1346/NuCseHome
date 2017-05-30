@@ -17,17 +17,24 @@
 		
 		
                 <h:panelGrid columns="2"> 
-                  <h:dataTable value="#{fifthSemesterNote.getLocation()}" var="u" border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
-    <f:facet name = "header" >File Name</f:facet>    	
+			
+                 <h:dataTable value="#{fifthSemesterNote.getLink()}" var="v"  border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
+                   <f:facet name = "header" >Download Here</f:facet>    	
             
             <h:column>
-              
-               <h:outputLabel value = "#{u.location}"
-                            
-                   />
+                <h:outputLink value="#{v.locationlink}">Download Here</h:outputLink>
+               
                
             </h:column>
-       </h:dataTable>  
+            
+         
+            
+           
+                      
+                   
+            
+           
+            </h:dataTable> 
 			
 			
 	  
