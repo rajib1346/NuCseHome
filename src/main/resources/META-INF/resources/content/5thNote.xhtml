@@ -15,17 +15,7 @@
                                   
         <h:form>
                 <h:panelGrid> 
-                  <h:dataTable value="#{fifthSemesterNote.getLocation()}" var="u" border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
-    <f:facet name = "header" >File Name</f:facet>    	
-            
-            <h:column>
-              
-               <h:outputLabel value = "#{u.location}"
-                            
-                   />
-               
-            </h:column>
-       </h:dataTable>  
+         
 			
 	         <h:dataTable value="#{fifthSemesterNote.getLink()}" var="v"  border="2" style=" margin: auto;height: 180;background:#fff ;color:darkgray azure;text-align: center">
     <f:facet name = "header" >Hand Notes</f:facet>    	
