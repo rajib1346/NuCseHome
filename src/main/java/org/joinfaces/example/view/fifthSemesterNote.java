@@ -49,38 +49,7 @@ String line;
 
     
 
-    public List<tabelElement> getLocation() throws  FileNotFoundException, IOException {
 
-        List<tabelElement> list = new ArrayList<tabelElement>();
-       //  BufferedReader br=null;
-
-      //  br=new BufferedReader(new FileReader("C:\\Users\\Acer\\Documents\\NetBeansProjects\\NuCseHome\\text"));
-      
-//        Class.forName("com.mysql.jdbc.Driver");
-//        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fast", "root", "");
-//
-//        Statement stmt = con.createStatement();
-//        ResultSet rs = stmt.executeQuery("select id,location,fileName,Author,size from " + selectedname + "");
- URL oracle = new URL("http://shawonislam.com/rajib/fifthnote.txt");
-    BufferedReader in = new BufferedReader(
-    new InputStreamReader(oracle.openStream()));
-
-    String inputLine;
-        while((inputLine = in.readLine()) != null) {
-            tabelElement element = new tabelElement();
-            
-              
-           // element.setId(rs.getString("id"));
-            element.setLocation(inputLine);
-//            element.setLocation(rs.getString("location"));
-//            element.setAuthor(rs.getString("Author"));
-//            element.setSize(rs.getString("size"));
-
-            list.add(element);
-        }
-
-        return list;
-    }
    public List<tabelElement> getLink() throws  FileNotFoundException, IOException {
 
         List<tabelElement> listlink = new ArrayList<tabelElement>();
