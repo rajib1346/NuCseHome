@@ -68,6 +68,7 @@ String line;
     String inputLine;
         while((inputLine = in.readLine()) != null) {
             tabelElement element = new tabelElement();
+            
               
            // element.setId(rs.getString("id"));
             element.setLocation(inputLine);
