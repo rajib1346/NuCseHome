@@ -73,7 +73,7 @@ String line;
 //
 //        Statement stmt = con.createStatement();
 //        ResultSet rs = stmt.executeQuery("select id,location,fileName,Author,size from " + selectedname + "");
- URL oracle = new URL("http://shawonislam.com/rajib/fast.txt");
+ URL oracle = new URL("http://shawonislam.com/rajib/sixnote.txt");
     BufferedReader in = new BufferedReader(
     new InputStreamReader(oracle.openStream()));
 
@@ -93,32 +93,28 @@ String line;
         return list;
     }
 
-    public void download( String lo) {
+   public List<tabelElement> getLink() throws  FileNotFoundException, IOException {
 
-        String l = lo;
-      //  String n = name;
-        try {
-            FacesContext context = FacesContext.getCurrentInstance();
-            ExternalContext externalContext = context.getExternalContext();
+        List<tabelElement> listlink = new ArrayList<tabelElement>();
+ 
+ URL oracle = new URL("http://shawonislam.com/rajib/sixlink.txt");
+    BufferedReader in = new BufferedReader(
+    new InputStreamReader(oracle.openStream()));
 
-            externalContext.responseReset();
-            externalContext.setResponseContentType("application/pdf");
-            externalContext.setResponseHeader("Content-Disposition", "attachment;filename=\"" + l + "\"");
+    String inputLine;
+        while((inputLine = in.readLine()) != null) {
+            tabelElement elementlink = new tabelElement();
+              
+           // element.setId(rs.getString("id"));
+            elementlink.setLocationlink(inputLine);
+//            element.setLocation(rs.getString("location"));
+//            element.setAuthor(rs.getString("Author"));
+//            element.setSize(rs.getString("size"));
 
-            InputStream inputStream = FacesContext.getCurrentInstance().getExternalContext().getResourceAsStream("/images/" + l + "");
-            OutputStream outputStream = externalContext.getResponseOutputStream();
-
-            byte[] buffer = new byte[2048];
-            int length;
-            while ((length = inputStream.read(buffer)) > 0) {
-                outputStream.write(buffer, 0, length);
-            }
-
-            inputStream.close();
-            context.responseComplete();
-
-        } catch (Exception e) {
-            e.printStackTrace(System.out);
+            listlink.add(elementlink);
         }
+
+        return listlink;
     }
+  
 }
