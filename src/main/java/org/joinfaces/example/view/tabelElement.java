@@ -32,7 +32,7 @@ import org.primefaces.model.StreamedContent;
 
 public class tabelElement {
   
-    private String location,locationlink;
+    private String location,locationlink,notification;
 
      public String getLocationlink() {
         return locationlink;
@@ -54,7 +54,13 @@ public class tabelElement {
         this.location = location;
     }
 
-  
+  public String getNotification() {
+        return notification;
+    }
+
+    public void setNotification(String notification) {
+        this.notification = notification;
+    } 
 
     
 }
